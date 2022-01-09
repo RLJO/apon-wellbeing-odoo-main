@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_branch_comp_rule" model="ir.rule">
+            <field name="name">Branch Based ON multi-company</field>
+            <field name="model_id" ref="model_res_branch"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="product_category_comp_rule" model="ir.rule">
+            <field name="name">product category Based ON multi-company</field>
+            <field name="model_id" ref="model_product_category"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>
